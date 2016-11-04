@@ -1,5 +1,28 @@
 package caveExplorer;
 
 public class InventoryNockles {
+	
+	private boolean hasMap;
+	private String map;
+
+	public InventoryNockles() {
+		hasMap = true;
+		updateMap();
+	}
+
+
+	private void updateMap() {
+		CaveRoom[][] caves = CaveExplorer.caves;
+		//convert these caves to a string representation
+		
+	}
+
+
+	public String getDescription() {
+		if(hasMap)return map;
+		else return "You have no inventory.";
+	}
+
+
 
 }
