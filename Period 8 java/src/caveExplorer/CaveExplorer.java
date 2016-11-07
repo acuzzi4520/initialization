@@ -22,10 +22,10 @@ public class CaveExplorer {
 		currentRoom.enter();
 		caves[1][2].setConnection(CaveRoom.WEST,
 				caves[1][1], new Door());
-		caves[1][2].setConnection(CaveRoom.EAST,
-				caves[1][3], new Door());
 		caves[1][2].setConnection(CaveRoom.SOUTH,
 				caves[2][2], new Door());
+		caves[1][2].setConnection(CaveRoom.EAST,
+				caves[1][3], new Door());
 		inventory = new InventoryNockles();
 		startExploring();
 		
