@@ -132,6 +132,7 @@ public class CaveRoom{
 				doors[indexFound]!= null && //
 				doors[indexFound].isOpen()){
 			CaveExplorer.currentRoom = borderingRooms[indexFound];
+			CaveExplorer.inventory.updateMap();
 		}
 		
 	}

@@ -1,18 +1,33 @@
 package caveExplorer;
 
 
+/**
+ * @author Student 8
+ *
+ */
 public class InventoryNockles {
 	
 	private boolean hasMap;
 	private String map;
 
 	public InventoryNockles() {
-		hasMap = true;
+		hasMap = false;
 		updateMap();
+	}
+	
+	
+	
+
+
+	public void setHasMap(boolean hasMap) {
+		this.hasMap = hasMap;
 	}
 
 
-	private void updateMap() {
+
+
+
+	public void updateMap() {
 		CaveRoom[][] caves = CaveExplorer.caves;
 		//create the top side
 		map = " ";
@@ -44,7 +59,7 @@ public class InventoryNockles {
 					}
 					map+=str;
 				}//end of row of caverooms
-				map+="\n";
+				map+="|\n";
 			}
 		}
 	}
