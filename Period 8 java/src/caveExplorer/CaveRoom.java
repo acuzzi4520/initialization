@@ -128,15 +128,20 @@ public class CaveRoom{
 				break;
 			}
 		}
-		if(borderingRooms[indexFound] != null && //rooms boder current position
+		goToRoom(indexFound);
+		}
+		
+	private void goToRoom(int indexFound) {
+		if(borderingRooms[indexFound] != null && //rooms border current position
 				doors[indexFound]!= null && //
 				doors[indexFound].isOpen()){
 			CaveExplorer.currentRoom.leave();
 			CaveExplorer.currentRoom = borderingRooms[indexFound];
 			CaveExplorer.currentRoom.enter();
 			CaveExplorer.inventory.updateMap();
-		}
 		
+	}
+
 	}
 
 	private static boolean isValid(String input) {
