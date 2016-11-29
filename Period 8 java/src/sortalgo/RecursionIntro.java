@@ -3,7 +3,7 @@ package sortalgo;
 public class RecursionIntro {
 
 	public static void main(String[] args){
-		hanoiSolution(2, "a","b","c");
+		hanoiSolution(3, "a","b","c");
 //		System.out.println("Using a for loop:");	
 //			for(int i = 0; i < 5; i++){
 //				System.out.println("Hello World! x"+i);
@@ -59,14 +59,9 @@ public class RecursionIntro {
 		if(numberOfDiscs >= 1){
 			System.out.println("Move "+ startPeg + " to "+ endPeg);
 		}else{
-			hanoiSolution(numberOfDiscs-1, 
-					startPeg,
-					endPeg,
-					midPeg);
-			hanoiSolution(1, 
-					startPeg,
-					midPeg,
-					endPeg);
+			hanoiSolution(numberOfDiscs-1, startPeg, endPeg, midPeg);
+			hanoiSolution(1, startPeg, midPeg,endPeg);
+			hanoiSolution(numberOfDiscs-1, midPeg, startPeg, endPeg);
 		}
 	}
 }
