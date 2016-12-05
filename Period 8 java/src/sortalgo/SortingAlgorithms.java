@@ -42,4 +42,11 @@ public class SortingAlgorithms {
 			swap(arrayToSort, i, minIndex);
 		}
 	}
+	
+	public static void insertionSort(int[] arrToSort){
+		int minIndex = 0;
+		for(int i = 1; i < arrToSort.length;i++){
+		
+		}
+	}
 }
