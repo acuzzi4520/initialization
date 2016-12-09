@@ -5,18 +5,28 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
+
+import guiPractice.components.Visible;
 
 public abstract class Screen {
 	
 	private int width;
 	private int height;
+	private ArrayList<Visible> viewObjects;
+	
 	protected BufferedImage image;
 
 	public Screen(int width, int height) {
+		viewObjects = new ArrayList<Visible>();
 		this.width = width;
 		this.height = height;
 		initImage();
+		initObjects(viewObjects);
 	}
+
+	public abstract void 
+		initObjects(ArrayList<Visible> viewObjects);
 
 	private void initImage() {
 		image = new BufferedImage(width,
