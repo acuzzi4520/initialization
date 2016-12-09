@@ -41,6 +41,10 @@ public abstract class Screen {
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setColor(Color.black);
+		//draw all visible components
+		for(Visible v: viewObjects){
+			g.drawImage(v.getImage(), g.getX(), v.getY(), null)
+		}
 //		g.setFont(new Font("Helvetica",Font.PLAIN,20));
 //		g.drawString("Hello", 40, 80);
 //		g.drawOval(0, 40, 120, 80);
