@@ -32,6 +32,18 @@ public class TextLabel extends Component {
 		this.size = i;
 	}
 	
+	public String getText(){
+		return text;
+	}
+	
+	public String getFont(){
+		return font;
+	}
+	
+	public int getSize(){
+		return size;
+	}
+	
 	
 
 	@Override
@@ -39,8 +51,10 @@ public class TextLabel extends Component {
 		g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
 				RenderingHints.VALUE_ANTIALIAS_ON);
 		g.setColor(Color.black);
-		g.setFont(new Font(font,Font.PLAIN,size));
-		g.drawString(text,  4,  getHeight()-5);
+		if(text != null){
+			g.setFont(new Font(font,Font.PLAIN,size));
+			g.drawString(text,  4,  getHeight()-5);
+		}
 	}
 
 }

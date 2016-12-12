@@ -7,7 +7,7 @@ public class Mousefollower extends GUIApplication{
 	private CoordinateScreen coordScreen;
 	
 	public static void main(String[] args){
-		
+		new Mousefollower();
 	}
 
 	@Override

@@ -21,8 +21,8 @@ public abstract class Screen {
 		viewObjects = new ArrayList<Visible>();
 		this.width = width;
 		this.height = height;
-		initImage();
 		initObjects(viewObjects);
+		initImage();
 	}
 
 	public abstract void 
@@ -43,7 +43,7 @@ public abstract class Screen {
 		g.setColor(Color.black);
 		//draw all visible components
 		for(Visible v: viewObjects){
-			g.drawImage(v.getImage(), g.getX(), v.getY(), null)
+			g.drawImage(v.getImage(), v.getX(), v.getY(), null);
 		}
 //		g.setFont(new Font("Helvetica",Font.PLAIN,20));
 //		g.drawString("Hello", 40, 80);
