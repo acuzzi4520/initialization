@@ -1,5 +1,3 @@
-
-
 package guiPractice.sampleGames;
 
 import guiPractice.GUIApplication;
@@ -9,7 +7,9 @@ public class Mousefollower extends GUIApplication{
 	private CoordinateScreen coordScreen;
 	
 	public static void main(String[] args){
-		new Mousefollower();
+		GUIApplication game = new Mousefollower();
+		Thread app = new Thread(game);
+		app.start();
 	}
 
 	@Override

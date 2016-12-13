@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 import javax.swing.JFrame;
 
-public abstract class GUIApplication extends JFrame{
+public abstract class GUIApplication extends JFrame implements Runnable                                                   {
 	
 	private Screen currentScreen;
 
@@ -57,6 +57,24 @@ public abstract class GUIApplication extends JFrame{
 	
 	public void paint(Graphics g){
 		g.drawImage(currentScreen.getImage(), 0, 0, null);
+	}
+	
+	
+	
+	
+	
+	
+	public void run(){
+		while(true){
+			currentScreen.update();
+			//updates the window
+			repaint();
+			try {
+				Thread.sleep(40);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
 	}
 
 
