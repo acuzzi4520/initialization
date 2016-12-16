@@ -47,7 +47,7 @@ public class Button extends TextLabel implements Clickable{
 			int cutoff = t.length();
 			while(cutoff > 0 && fm.stringWidth(t) > getWidth()){
 				cutoff --;
-				t = t.substring(o, cutoff);
+				t = t.substring(0, cutoff);
 			}
 			g.drawString(t,  (getWidth()-fm.stringWidth(t))/2, 
 					(getHeight()+fm.getHeight()-fm.getDescent())/2);
@@ -56,13 +56,13 @@ public class Button extends TextLabel implements Clickable{
 
 	@Override
 	public boolean isHovered(int x, int y) {
-		// TODO Auto-generated method stub
-		return false;
+		return x > getX() && x < getX()+getWidth() &&
+				y > getY() && y < getY() + getHeight();
 	}
 
 	@Override
 	public void act() {
-		// TODO Auto-generated method stub
+		Action.act();
 		
 	}
 
