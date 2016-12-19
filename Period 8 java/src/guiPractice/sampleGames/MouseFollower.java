@@ -2,12 +2,14 @@ package guiPractice.sampleGames;
 
 import guiPractice.GUIApplication;
 
-public class Mousefollower extends GUIApplication{
+public class MouseFollower extends GUIApplication{
 	
-	private CoordinateScreen coordScreen;
+	private static CoordinateScreen coordScreen;
+	private static MovementScreen moveScreen;
+	private static MouseFollower game;
 	
 	public static void main(String[] args){
-		GUIApplication game = new Mousefollower();
+		game = new MouseFollower();
 		Thread app = new Thread(game);
 		app.start();
 	}

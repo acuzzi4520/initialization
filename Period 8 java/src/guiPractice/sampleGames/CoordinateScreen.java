@@ -38,7 +38,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 				
 			}
 		});
-		picture = new Graphic(50,50,"Resources/sampleImages/Cloud.jpg");
+		picture = new Graphic(200,200,1,"Resources/sampleImages/Cloud.jpg");
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);

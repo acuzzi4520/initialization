@@ -15,6 +15,13 @@ public class Graphic implements Visible {
 	private boolean loadedImages;
 	
 	
+	public Graphic(int x, int y, double scale, String imageLocation){
+		this.x = x;
+		this.y = y;
+		loadedImages = false;
+		loadImages(imageLocation, scale);
+	}
+	
 	public Graphic(int x, int y, String imageLocation){
 		this.x = x;
 		this.y = y;
@@ -63,7 +70,25 @@ public class Graphic implements Visible {
 	}
 
 	private void loadImages(String imageLocation, double scale) {
+		try{
+			//get the image from file(FULL SIZE)
+			ImageIcon icon = new ImageIcon(imageLocation);
 		
+			int newWidth = (int)(icon.getIconWidth() * scale);
+			int newHeight = (int)(icon.getIconHeight() * scale);
+			image = new BufferedImage(newWidth,newHeight,
+					BufferedImage.TYPE_INT_ARGB);
+			Graphics2D g = image.createGraphics();
+			g.drawImage(icon.getImage(),0,0,newWidth,newHeight,
+					0,0,icon.getIconWidth(),icon.getIconHeight(),
+					null);
+			
+			
+			loadedImages = true;
+		}catch(Exception e){
+			//in case file is not found
+			e.printStackTrace();
+		}
 	}
 
 	@Override
