@@ -18,6 +18,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 	private TextLabel label;
 	private TextArea paragraph;
 	private Button button;
+	private Graphic picture;
 
 	public CoordinateScreen(int width, int height) {
 		super(width, height);
@@ -37,7 +38,7 @@ public class CoordinateScreen extends Screen implements MouseMotionListener{
 				
 			}
 		});
-		Graphic picture = new Graphic(50,50,"sampleImages/Cloud.jpg");
+		picture = new Graphic(50,50,"Resources/sampleImages/Cloud.jpg");
 		viewObjects.add(picture);
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
