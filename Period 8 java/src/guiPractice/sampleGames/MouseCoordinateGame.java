@@ -5,7 +5,7 @@ import guiPractice.GUIApplication;
 public class MouseCoordinateGame extends GUIApplication{
 
 	public static MouseCoordinateGame game;
-	public static MyScreen myScreen;
+	public static MovementScreen myScreen;
 	
 	public MouseCoordinateGame(int i, int j) {
 		// TODO Auto-generated constructor stub
