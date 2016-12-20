@@ -41,8 +41,8 @@ public class ClickableGraphic implements Clickable, MouseListener{
 
 	@Override
 	public boolean isHovered(int x, int y) {
-		// TODO Auto-generated method stub
-		return false;
+		return x > getX() && x < getX()+getWidth() &&
+				y > getY() && y < getY() + getHeight();
 	}
 
 	@Override
@@ -50,5 +50,7 @@ public class ClickableGraphic implements Clickable, MouseListener{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
 
 }
