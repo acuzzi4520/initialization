@@ -98,25 +98,29 @@ public class Graphic implements Visible {
 
 	@Override
 	public int getX() {
-		// TODO Auto-generated method stub
 		return x;
 	}
 
 	@Override
 	public int getY() {
-		// TODO Auto-generated method stub
 		return y;
+	}
+	
+	public void setX(int i){
+		this.x = i;
+	}
+	
+	public void setY(int i){
+		this.y = i;
 	}
 
 	@Override
 	public int getWidth() {
-		// TODO Auto-generated method stub
 		return image.getWidth();
 	}
 
 	@Override
 	public int getHeight() {
-		// TODO Auto-generated method stub
 		return image.getHeight();
 	}
 
