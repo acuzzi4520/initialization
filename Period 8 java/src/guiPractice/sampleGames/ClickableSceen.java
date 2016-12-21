@@ -51,6 +51,9 @@ public abstract class ClickableSceen extends Screen implements MouseListener{
 	@Override
 	public void initObjects(ArrayList<Visible> viewObjects) {
 		initAllObjects(viewObjects);
+		for(int i = 0;i < getSize(viewObjects); i++){
+			
+		}
 	}
 	
 	 public MouseListener getMouseListener(){
