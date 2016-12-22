@@ -1,5 +1,8 @@
 package guiPractice.sampleGames;
 
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
@@ -9,58 +12,73 @@ import guiPractice.Screen;
 import guiPractice.components.Clickable;
 import guiPractice.components.Visible;
 
-public abstract class ClickableSceen extends Screen implements MouseListener{
+public abstract class ClickableSceen extends Screen implements MouseListener {
 
+	private ArrayList<Clickable> clickables;
+	
 	public ClickableSceen(int width, int height) {
 		super(width, height);
+		// TODO Auto-generated constructor stub
 	}
 
-	public ArrayList<Clickable> clickables;
+	public abstract void initAllObjects(List<Visible> viewObjects);
 	
-
 	@Override
-	public void mouseClicked(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseEntered(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent e) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void initObjects(ArrayList<Visible> viewObjects) {
+	public void initObjects(List<Visible> viewObjects) {
 		initAllObjects(viewObjects);
-		for(int i = 0;i < getSize(viewObjects); i++){
-			
+		clickables = new ArrayList<Clickable>();
+		for(Visible v: viewObjects){
+			if(v instanceof Clickable){
+				clickables.add((Clickable)v);
+			}
+		}
+	}
+
+	public void mouseClicked(MouseEvent m) {
+		for(Clickable c: clickables){
+			if(c.isHovered(m.getX(), m.getY())){
+				c.act();
+				break;
+			}
 		}
 	}
 	
-	 public MouseListener getMouseListener(){
-		 return this;
-	 }
+	public void addObject(Visible v){
+		super.addObject(v);
+		if(v instanceof Clickable){
+			clickables.add((Clickable)v);
+		}
+	}
+	
 
-	 void initAllObjects(ArrayList<Visible> Vlst){
+	
+	public void remove(Visible v){
+		super.remove(v);
+		clickables.remove(v);
+	}
+
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
 		
-	 }
+	}
+
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public MouseListener getMouseListener(){
+		return this;
+	}
+	
 }

@@ -8,6 +8,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.List;
 
 import guiPractice.components.Visible;
 
@@ -27,8 +28,7 @@ public abstract class Screen {
 		initImage();
 	}
 
-	public abstract void 
-		initObjects(ArrayList<Visible> viewObjects);
+
 
 	private void initImage() {
 		image = new BufferedImage(width,
@@ -137,4 +137,13 @@ public abstract class Screen {
 	public MouseMotionListener getMouseMotionListener() {
 		return null;
 	}
+
+	public void addObject(Visible v) {
+		viewObjects.add(v);
+	}
+
+
+
+	public abstract void initObjects(List<Visible> viewObjects);
+
 }
