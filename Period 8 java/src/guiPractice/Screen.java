@@ -146,4 +146,11 @@ public abstract class Screen {
 
 	public abstract void initObjects(List<Visible> viewObjects);
 
+
+
+	public void initObjects(ArrayList<Visible> viewObjects) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

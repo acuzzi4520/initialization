@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import guiPractice.Screen;
 import guiPractice.components.Action;
@@ -82,6 +83,12 @@ public class MovementScreen extends Screen implements MouseMotionListener,MouseL
 	
 	public MouseListener getMouseListener(){
 		return this;
+	}
+
+	@Override
+	public void initObjects(List<Visible> viewObjects) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
