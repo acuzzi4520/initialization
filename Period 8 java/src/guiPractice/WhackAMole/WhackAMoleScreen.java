@@ -26,11 +26,11 @@ public class WhackAMoleScreen extends ClickableSceen implements Runnable{
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
 		moles = new ArrayList<MoleInterface>();
-//		player = getAPlayer();
+	player = getAPlayer();
 		label = new TextLabel(getWidth()/2-60, getHeight()/2-30,120,60,"Ready...");
 		timeLabel = new TextLabel(getWidth()/2-60, 50,120,60,"");
 		viewObjects.add(label);
-//		viewObjects.add(player);
+		viewObjects.add(player);
 		viewObjects.add(timeLabel);
 	}
 	
@@ -64,8 +64,7 @@ public class WhackAMoleScreen extends ClickableSceen implements Runnable{
 		if(Math.random() < probability){
 			final MoleInterface mole = getAMole();
 			//between .5 and 2.5 seconds
-			mole.setAppearenceTime((int)(500 +
-					Math.random() * 2000));
+			mole.setAppearenceTime((int)(500 + Math.random() * 2000));
 			mole.setAction(new Action(){
 				public void act(){
 					player.increaseScore(1);
@@ -102,13 +101,12 @@ public class WhackAMoleScreen extends ClickableSceen implements Runnable{
 	}
 
 	private PlayerInterface getAPlayer(){
-		return null;
-		/**will be used to make a player */
+		return new Player(20,20);
 	}
 	
 	private MoleInterface getAMole(){
-		return null;
-		/** will be used to make enemies */
+		return new Mole((int)(getWidth()*Math.random())-100,
+				(int)(getHeight()*Math.random()))
 	}
 	
 	private void changeText(String s){

@@ -3,13 +3,17 @@ package guiPractice.WhackAMole;
 import java.util.List;
 
 import guiPractice.components.Action;
+import guiPractice.components.ClickableGraphic;
 import guiPractice.components.Visible;
 import guiPractice.sampleGames.ClickableSceen;
 
-public class Mole extends ClickableSceen implements MoleInterface{
+public class Mole extends ClickableGraphic implements MoleInterface{
+	
+	private double appearenceTime;
 
-	public Mole() {
+	public Mole(int x, int y) {
 		// TODO Auto-generated constructor stub
+		super(x,y,.50,"resources/sampleImages/mole.png", null);
 	}
 
 	@Override
@@ -18,6 +22,17 @@ public class Mole extends ClickableSceen implements MoleInterface{
 		return false;
 	}
 
+	@Override
+	public int getAppearenceTime() {
+		// TODO Auto-generated method stub
+		return (int) appearenceTime;
+	}
+	
+	public void setAppearenceTime(double d) {
+		this.appearenceTime = d;
+		
+	}
+	
 	@Override
 	public void act() {
 		// TODO Auto-generated method stub
@@ -42,17 +57,6 @@ public class Mole extends ClickableSceen implements MoleInterface{
 		return false;
 	}
 
-	@Override
-	public int getAppearenceTime() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void setAppearenceTime(int d) {
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public void setAction(Action action) {
@@ -60,14 +64,19 @@ public class Mole extends ClickableSceen implements MoleInterface{
 		
 	}
 
-	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
+	
 	public void initObjects(List<Visible> viewObjects) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	public void setAppearenceTime(int d) {
 		// TODO Auto-generated method stub
 		
 	}
