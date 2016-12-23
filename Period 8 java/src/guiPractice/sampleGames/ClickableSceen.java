@@ -12,6 +12,8 @@ import guiPractice.Screen;
 import guiPractice.components.Clickable;
 import guiPractice.components.Visible;
 
+
+
 public abstract class ClickableSceen extends Screen implements MouseListener {
 
 	private ArrayList<Clickable> clickables;
@@ -23,8 +25,7 @@ public abstract class ClickableSceen extends Screen implements MouseListener {
 
 	public abstract void initAllObjects(List<Visible> viewObjects);
 	
-	@Override
-	public void initObjects(List<Visible> viewObjects) {
+	public void initObjects(ArrayList<Visible> viewObjects) {
 		initAllObjects(viewObjects);
 		clickables = new ArrayList<Clickable>();
 		for(Visible v: viewObjects){

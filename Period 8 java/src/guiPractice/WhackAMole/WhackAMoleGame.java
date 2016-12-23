@@ -5,12 +5,12 @@ import guiPractice.GUIApplication;
 public class WhackAMoleGame extends GUIApplication{
 
 	public WhackAMoleGame() {
-		super(width,height);
+		
 	}
 
 	public static void main(String[] args) {
 		WhackAMoleGame game = new WhackAMoleGame();
-		Thread app = new Thread(app);
+		Thread app = new Thread(game);
 		app.start();
 	}
 
