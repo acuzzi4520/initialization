@@ -14,11 +14,11 @@ import guiPractice.components.Visible;
 
 
 
-public abstract class ClickableSceen extends Screen implements MouseListener {
+public abstract class ClickableScreen extends Screen implements MouseListener {
 
 	private ArrayList<Clickable> clickables;
 	
-	public ClickableSceen(int width, int height) {
+	public ClickableScreen(int width, int height) {
 		super(width, height);
 		// TODO Auto-generated constructor stub
 	}
@@ -36,7 +36,8 @@ public abstract class ClickableSceen extends Screen implements MouseListener {
 	}
 
 	public void mouseClicked(MouseEvent m) {
-		for(Clickable c: clickables){
+		for(int i = 0; i < clickables.size(); i ++){
+			Clickable c = clickables.get(i);
 			if(c.isHovered(m.getX(), m.getY())){
 				c.act();
 				break;

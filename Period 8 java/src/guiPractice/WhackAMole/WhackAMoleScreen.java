@@ -26,7 +26,7 @@ public class WhackAMoleScreen extends ClickableSceen implements Runnable{
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
 		moles = new ArrayList<MoleInterface>();
-	player = getAPlayer();
+		player = getAPlayer();
 		label = new TextLabel(getWidth()/2-60, getHeight()/2-30,120,60,"Ready...");
 		timeLabel = new TextLabel(getWidth()/2-60, 50,120,60,"");
 		viewObjects.add(label);
@@ -36,6 +36,15 @@ public class WhackAMoleScreen extends ClickableSceen implements Runnable{
 	
 	public void update(){
 		super.update();
+	}
+	
+	private void changeText(String s){
+		try{
+			Thread.sleep(1000);
+			label.setText(s);
+		}catch(InterruptedException e){
+			e.printStackTrace();
+		}
 	}
 	
 	@Override
@@ -109,15 +118,6 @@ public class WhackAMoleScreen extends ClickableSceen implements Runnable{
 				(int)(getHeight()*Math.random()));
 	}
 	
-	private void changeText(String s){
-		try{
-			Thread.sleep(1000);
-			label.setText(s);
-		}catch(InterruptedException e){
-			e.printStackTrace();
-		}
-	}
-
 	@Override
 	public void initObjects(List<Visible> viewObjects) {
 		// TODO Auto-generated method stub
