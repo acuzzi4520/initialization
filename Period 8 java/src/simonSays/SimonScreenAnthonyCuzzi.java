@@ -10,7 +10,7 @@ import guiPractice.sampleGames.ClickableScreen;
 public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable{
 	
 	TextLabel label;
-	ButtonInterfaceAnthonyCuzzi button;
+	ButtonInterfaceAnthonyCuzzi[] button;
 	ProgressInterfaceAnthonyCuzzi progress;
 	ArrayList<MoveInterfaceAnthonyCuzzi> pattern;
 	
@@ -31,7 +31,7 @@ public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable
 
 	@Override
 	public void initAllObjects(List<Visible> viewObjects) {
-		addButtons()
+		addButtons();
 		progress = getProgress();
 		label = new TextLabel(130,230,300,40,"Let's play Simon!");
 		pattern = new ArrayList<MoveInterfaceAnthonyCuzzi>();
@@ -45,8 +45,7 @@ public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable
 	}
 
 	private MoveInterfaceAnthonyCuzzi randomMove() {
-		// TODO Auto-generated method stub
-		return null;
+		button[(int) ((int)1 + (Math.random()*6))];
 	}
 
 	/**
