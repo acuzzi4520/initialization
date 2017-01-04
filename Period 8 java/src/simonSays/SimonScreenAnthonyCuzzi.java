@@ -45,7 +45,7 @@ public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable
 	}
 
 	private MoveInterfaceAnthonyCuzzi randomMove() {
-		button[(int) ((int)1 + (Math.random()*6))];
+		button[(int) ((int)1 + (Math.random()*6))] = ;
 	}
 
 	/**

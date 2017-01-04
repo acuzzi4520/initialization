@@ -5,12 +5,14 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
+import java.util.List;
 
 import guiPractice.Screen;
 import guiPractice.components.Action;
 import guiPractice.components.Button;
 import guiPractice.components.ClickableGraphic;
 import guiPractice.components.Graphic;
+import guiPractice.components.MovingComponent;
 import guiPractice.components.TextArea;
 import guiPractice.components.TextLabel;
 import guiPractice.components.Visible;
@@ -49,12 +51,17 @@ public class CoordinateScreen extends Screen implements MouseMotionListener,Mous
 		});
 		
 		
-		
 		viewObjects.add(label);
 		viewObjects.add(paragraph);
 		viewObjects.add(button);
 		viewObjects.add((Visible) move);
 		
+		MovingComponent mc = 
+				new MovingComponent(30,60,80,80);
+		mc.setVy(3);
+		mc.play();
+		
+		viewObjects.add(mc);
 	}
 
 	@Override
@@ -107,6 +114,12 @@ public class CoordinateScreen extends Screen implements MouseMotionListener,Mous
 
 	@Override
 	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void initObjects(List<Visible> viewObjects) {
 		// TODO Auto-generated method stub
 		
 	}
