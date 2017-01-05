@@ -79,7 +79,7 @@ public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable
 		int numberOfButtons = 6;
 		Color[] Colors = {Color.red,Color.blue,Color.green,Color.orange,Color.yellow,Color.magenta};
 		for(int i = 0; i < numberOfButtons; i++){
-			 ButtonInterfaceAnthonyCuzzi b = getAButton();
+			 final ButtonInterfaceAnthonyCuzzi b = getAButton();
 			 b.setColor(Colors[i]); 
 			    b.setX(60 + i*20);
 			    b.setY(60);
@@ -90,6 +90,7 @@ public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable
 			    			Thread blink = new Thread(new Runnable(){
 
 			    				public void run(){
+			    					 b.highlight();
 			    				}
 
 			    				});

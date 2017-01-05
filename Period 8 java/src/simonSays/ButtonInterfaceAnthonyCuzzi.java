@@ -15,4 +15,6 @@ public interface ButtonInterfaceAnthonyCuzzi extends Clickable{
 	
 	void setAction(Action a);
 
+	void highlight();
+
 }
