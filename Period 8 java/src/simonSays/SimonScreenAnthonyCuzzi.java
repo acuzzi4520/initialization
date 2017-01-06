@@ -34,7 +34,43 @@ public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable
 	
 	public void nextRound(){
 		acceptingInput = false;
-		round number += 1;
+		roundNumber += 1;
+		pattern.add(randomMove());
+		progress.setRound(roundNumber);
+		progress.setSequenceSize(pattern.size());
+		changeText("Simon's Turn");
+		label.setText("");
+		playSequence();
+		changeText("Your turn");
+		acceptingInput = true;
+		sequenceIndex = 0;
+	}
+
+	private void playSequence() {
+		ButtonInterfaceAnthonyCuzzi b = null;
+		for(int i = 0; i < pattern.size(); i++){
+			if(b != null){
+				b.dim();
+				b = ((MoveInterfaceAnthonyCuzzi) pattern).getButton();
+				b.highlight();
+				int sleepTime = 800-(roundNumber*20);
+				try {
+					Thread.sleep(sleepTime);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		b.dim();
+	}
+
+	private void changeText(String string) {
+		label = new TextLabel(130,230,300,40,string);
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -97,14 +133,14 @@ public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable
 			    				public void run(){
 			    					 b.highlight();
 			    					 Thread.sleep(800);
-			    					 dim();
+			    					 b.dim();
 			    				}
 
 			    				});
 			    			blink.start();
 			    			
 			    		}
-			    		if(b == sequence.get(sequenceIndex).getButton()){
+			    		if(b == pattern.get(sequenceIndex).getButton()){
 			    			sequenceIndex++;
 			    		}else{
 			    			progress.gameOver();
@@ -113,7 +149,7 @@ public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable
 
 			    	}); 
 		}
-		if(sequenceIndex == sequence.size()){
+		if(sequenceIndex == pattern.size()){
 		Thread nextRound = new Thread(SimonScreenAnthonyCuzzi.this);
 		nextRound.start(); 
 		}

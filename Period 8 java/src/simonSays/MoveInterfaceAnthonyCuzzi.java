@@ -2,6 +2,6 @@ package simonSays;
 
 public interface MoveInterfaceAnthonyCuzzi {
 
-	getButton();
+	ButtonInterfaceAnthonyCuzzi getButton();
 	
 }

@@ -16,7 +16,7 @@ public abstract class Screen {
 	
 	protected static int width;
 	protected static int height;
-	private ArrayList<Visible> viewObjects;
+	protected ArrayList<Visible> viewObjects;
 	
 	protected BufferedImage image;
 

@@ -17,4 +17,7 @@ public interface ButtonInterfaceAnthonyCuzzi extends Clickable{
 
 	void highlight();
 
+	void dim();
+
+
 }
