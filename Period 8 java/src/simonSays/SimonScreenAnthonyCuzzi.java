@@ -28,8 +28,13 @@ public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable
 
 	@Override
 	public void run() {
-		// TODO Auto-generated method stub
-		
+		label.setText("");
+	    nextRound();
+	}
+	
+	public void nextRound(){
+		acceptingInput = false;
+		round number += 1;
 	}
 
 	@Override
@@ -91,14 +96,28 @@ public class SimonScreenAnthonyCuzzi extends ClickableScreen implements Runnable
 
 			    				public void run(){
 			    					 b.highlight();
+			    					 Thread.sleep(800);
+			    					 dim();
 			    				}
 
 			    				});
+			    			blink.start();
+			    			
+			    		}
+			    		if(b == sequence.get(sequenceIndex).getButton()){
+			    			sequenceIndex++;
+			    		}else{
+			    			progress.gameOver();
 			    		}
 			    	}
 
 			    	}); 
 		}
+		if(sequenceIndex == sequence.size()){
+		Thread nextRound = new Thread(SimonScreenAnthonyCuzzi.this);
+		nextRound.start(); 
+		}
+		viewObjects.add(b);
 	}
 	
 	/**
